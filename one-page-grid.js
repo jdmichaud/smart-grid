@@ -76,23 +76,3 @@ function updateGrid(div, items) {
   }
   createGrid(div, items, layout.col, layout.row);
 }
-
-window.onload = function () {
-  container = document.getElementsByClassName('container')[0];
-  items = [];
-  image = document.createElement('img');
-  image.src = 'pattern.jpg';
-  image.onload = function () {
-    items.push(image);
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    items.push(image.cloneNode());
-    updateGrid(container, items);
-    console.log('done.');
-  }
-}

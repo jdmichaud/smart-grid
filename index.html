@@ -7,5 +7,26 @@
 <body>
   <div class="container"></div>
   <script src="one-page-grid.js"></script>
+  <script>
+    window.onload = function () {
+      container = document.getElementsByClassName('container')[0];
+      items = [];
+      image = document.createElement('img');
+      image.src = 'pattern.jpg';
+      image.onload = function () {
+        items.push(image);
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        items.push(image.cloneNode());
+        updateGrid(container, items);
+        console.log('done.');
+      }
+    }
+  </script>
 </body>
 </html>
