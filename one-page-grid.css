@@ -1,0 +1,34 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+}
+.container {
+  display: flex;
+  max-height: 100%;
+  flex-direction: column;
+}
+.row {
+  /*border: solid 5px #F00;*/
+  width: 100%;
+  display: flex;
+  /* Flex property as an container */
+  flex-direction: row;
+  /* Flex property as an item */
+  flex-basis: 100vh;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.item {
+  flex-basis: 100vw;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+.source {
+  max-height: 100%;
+  max-width: 100%;
+  /* Center the image in the item */
+  display:block;
+  margin:auto;
+}
