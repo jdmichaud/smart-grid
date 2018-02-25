@@ -76,3 +76,5 @@ function updateGrid(div, items) {
   }
   createGrid(div, items, layout.col, layout.row);
 }
+
+module.exports = updateGrid;
