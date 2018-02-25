@@ -1,5 +1,5 @@
 {
-  "name": "smart-grid",
+  "name": "smartgrid",
   "version": "1.0.0",
   "description": "Arrange a grid according to the screen and item ratio",
   "main": "one-page-grid.js",
