@@ -16,22 +16,20 @@ function pickProperLayout(numItems, col, row) {
    .filter(a => a.n >= numItems)
    // Priviledge layout with more columns than rows
    .sort((a, b) => a.n > b.n || (a.n === b.n && a.col < b.col))
-  console.log(arr);
   return arr[0];
-  throw new Error('Internal error');
 }
 
 function appendRow(div) {
   const newRowElement = document.createElement('div');
-  newRowElement.className = 'row';
+  newRowElement.className = 'sg-row';
   div.appendChild(newRowElement);
   return newRowElement;
 }
 
 function appendItem(row, item) {
-  item.className += ' source';
+  item.className += ' sg-source';
   const newItemElement = document.createElement('div');
-  newItemElement.className = 'item';
+  newItemElement.className = 'sg-item';
   newItemElement.appendChild(item);
   row.appendChild(newItemElement);
 }
@@ -54,18 +52,26 @@ function getClientMaxSize(div, divName) {
   const originalHeight = div.style.height;
   div.style.width = '100%';
   div.style.height = '100%';
-  if (div.style.width === 0 || div.style.height === 0) {
-    throw new Error(`width and height of ${divName} shall be set`);
+  // Retrieve client size if it was maximized
+  const width = div.clientWidth;
+  const height = div.clientHeight;
+  // Restore original size
+  div.style.width = originalWidth;
+  div.style.height = originalHeight;
+  // If 0 is found, there is a problem somewhere
+  console.log(width, height);
+  if (width === 0 || height === 0) {
+    throw new Error(`width and height of container shall be set`);
   }
   return {
-    width: div.clientWidth,
-    height: div.clientHeight,
+    width: width,
+    height: height,
   };
 }
 
 function updateGrid(div, items) {
   if (items.length <= 0) return;
-  containerSize = getClientMaxSize(div, 'container');
+  containerSize = getClientMaxSize(div, 'sg-container');
   const ratio = (containerSize.width / containerSize.height) /
     (items[0].naturalWidth / items[0].naturalHeight);
   const numCols = getColumns(items.length, ratio);
@@ -77,4 +83,5 @@ function updateGrid(div, items) {
   createGrid(div, items, layout.col, layout.row);
 }
 
-module.exports = updateGrid;
+if (window.module !== undefined)
+  module.exports = updateGrid;

@@ -4,12 +4,12 @@ body {
   overflow: hidden;
   margin: 0px;
 }
-.container {
+.sg-container {
   display: flex;
   max-height: 100%;
   flex-direction: column;
 }
-.row {
+.sg-row {
   /*border: solid 5px #F00;*/
   width: 100%;
   display: flex;
@@ -20,12 +20,12 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
 }
-.item {
+.sg-item {
   flex-basis: 100vw;
   flex-grow: 1;
   flex-shrink: 1;
 }
-.source {
+.sg-source {
   max-height: 100%;
   max-width: 100%;
   /* Center the image in the item */
