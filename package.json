@@ -1,0 +1,19 @@
+{
+  "name": "smart-grid",
+  "version": "1.0.0",
+  "description": "Arrange a grid according to the screen and item ratio",
+  "main": "one-page-grid.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdmichaud/smart-grid.git"
+  },
+  "author": "jdmichaud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdmichaud/smart-grid/issues"
+  },
+  "homepage": "https://github.com/jdmichaud/smart-grid#readme"
+}
